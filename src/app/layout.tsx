@@ -5,6 +5,7 @@ import Header from "./components/header/Header";
 import Head from "next/head";
 import Footer from "./components/Footer";
 import Landing from "./components/landing/Landing";
+import Keywords from "./components/keywords/Keywords";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         <Landing />
+        <Keywords />
         {children}
         <Footer />
       </body>
