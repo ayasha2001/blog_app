@@ -1,0 +1,1 @@
+export const CRICKET_INTRO_TITLE = "Amazing and Interesting facts about cricket"

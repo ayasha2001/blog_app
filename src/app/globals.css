@@ -6,6 +6,10 @@
   background-color: #2c249c;
 }
 
+.theme-grey {
+  background-color: #EBEDF3;
+}
+
 .theme-light-blue:hover {
   background-color: #5a82f8;
   position: relative;
