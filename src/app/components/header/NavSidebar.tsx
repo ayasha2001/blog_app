@@ -5,14 +5,12 @@ import { useState, Fragment } from "react";
 
 // Component Imports
 import { Dialog, Transition } from "@headlessui/react";
-import { Bars2Icon, XMarkIcon } from "@heroicons/react/16/solid";
-import { Bars3BottomLeftIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 
 // Other Imports
-import useDevice from "@/frameworks/utils/useDevice";
 import { NAV_ITEMS } from "./config";
 
-const NavSidebar = ({}: /*  isOpen=false, onClose = ()=>{}*/ any) => {
+const NavSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClose = () => {
@@ -21,7 +19,7 @@ const NavSidebar = ({}: /*  isOpen=false, onClose = ()=>{}*/ any) => {
 
   return (
     <>
-      <Bars2Icon className="h-4 w-4 text-white" onClick={() => setIsOpen(true)}/>
+      <Bars3Icon className="h-4 w-4 mx-auto text-white" onClick={() => setIsOpen(true)}/>
       {/* <button className='' >☰</button> */}
       <Transition.Root show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={onClose}>
@@ -51,8 +49,8 @@ const NavSidebar = ({}: /*  isOpen=false, onClose = ()=>{}*/ any) => {
                   leaveTo="translate-x-full"
                 >
                   <Dialog.Panel className="w-screen max-w-md">
-                    <div className="h-full flex flex-col theme-blue shadow-xl">
-                      <div className="px-4 py-6 theme-blue sm:px-6">
+                    <div className="h-full flex flex-col bg-themeRed shadow-xl">
+                      <div className="px-4 py-6 bg-themeRed sm:px-6">
                         <div className="flex items-start justify-between">
                           <h2 className="text-lg font-medium text-gray-900">
                             Sidebar

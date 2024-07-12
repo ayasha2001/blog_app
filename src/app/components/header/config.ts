@@ -1,37 +1,40 @@
 export const NAV_ITEMS = [
-  { 
-    title: "Home", 
-    type: "text", 
-    children: []
+  {
+    title: "Home",
+    type: "text",
+    children: [],
+    href: "/",
   },
-  { 
-    title: "About", 
-    type: "text", 
-    children: [] 
+  {
+    title: "About",
+    type: "text",
+    children: [],
+    href: "/about",
   },
-  { 
-    title: "Blogs", 
-    type: "dropdown", 
+  {
+    title: "Blogs",
+    type: "dropdown",
     children: [
-      { title: 'Web Development', href: '/web-development' }, 
-      { title: 'App Development', href: '/app-development' }
-    ]
+      { title: "Web Development", href: "/blogs/web-development" },
+      { title: "App Development", href: "/blogs/app-development" },
+    ],
+    href: "/blogs",
   },
-  { 
-    title: "Team Members", 
-    type: "text", 
-    children: [] 
+  {
+    title: "Team Members",
+    type: "text",
+    children: [],
+    href: "#",
   },
 ];
-
 
 export const ACCOUNT_ITEMS = [
   {
     title: "Profile",
-    slug: "/profile"
+    href: "#",
   },
   {
-    title: 'About',
-    slug: "/about"
-  }
-]
+    title: "About",
+    href: "/about",
+  },
+];

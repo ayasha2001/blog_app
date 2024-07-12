@@ -24,9 +24,9 @@ const NavItems = () => {
     <div className="flex col-span-3 justify-center h-full">
       {NAV_ITEMS?.map((item: any, idx: number) => {
         return <div key={idx} onMouseEnter={() => onMouseEnter(idx)} onMouseLeave={onMouseLeave}>
-              <span className='flex text-white text-xl px-6 items-center uppercase theme-light-blue hover:cursor-pointer h-full'>{item?.title}{
+              <a href={item?.href} className='flex text-white text-xl px-6 items-center uppercase mirror-effect hover:cursor-pointer h-full'>{item?.title}{
                 item?.children?.length  > 0 ? '^' : null
-              }</span>
+              }</a>
               {
                 (item?.type === 'dropdown' && onMouseToggle === idx ) ? 
                   <Dropdown items={item?.children}/> 

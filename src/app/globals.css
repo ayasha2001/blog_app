@@ -2,21 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.theme-blue {
-  background-color: #2c249c;
-}
 
-.theme-grey {
-  background-color: #EBEDF3;
-}
-
-.theme-light-blue:hover {
-  background-color: #5a82f8;
+.mirror-effect:hover {
+  background-color: #C73659;
   position: relative;
   transition: transform 200ms ease;
   overflow: hidden;
 }
-.theme-light-blue:before {
+.mirror-effect:before {
   content: "";
   position: absolute;
   height: 150%;
@@ -25,7 +18,60 @@
   background-color: rgba(255, 255, 255, 0.2);
   left: -100px;
 }
-.theme-light-blue:hover:before {
+
+.mirror-effect:hover:before {
   transition: left 1000ms ease;
   left: 250px;
+}
+
+.neon-box {
+  position: relative;
+  display: inline-block;
+  background-color: black;
+  border: 2px solid rgba(169, 29, 58, 1); /* Neon border color */
+  box-shadow: 0 0 10px rgba(169, 29, 58, 1), /* Glow */
+              0 0 20px rgba(169, 29, 58, 1),
+              0 0 30px rgba(169, 29, 58, 1),
+              0 0 40px rgba(169, 29, 58, 1);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: start;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Ensure the shine effect doesn't overflow the box */
+}
+
+.neon-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0.2) 70%
+  );
+  transition: all 0.6s ease-in-out;
+  transform: rotate(45deg) translateX(-100%);
+}
+
+.neon-box:hover::before {
+  transform: rotate(45deg) translateX(100%);
+}
+
+.hideScrollbar::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.sr-only {
+  display: hidden;
+}
+
+.rotate {
+  writing-mode: vertical-rl;
+  text-align: center;
+  transform:rotate(180deg);
 }
