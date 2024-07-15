@@ -21,10 +21,10 @@ export const NAV_ITEMS = [
     href: "/blogs",
   },
   {
-    title: "Team Members",
+    title: "Write with us",
     type: "text",
     children: [],
-    href: "#",
+    href: "/write-with-us",
   },
 ];
 

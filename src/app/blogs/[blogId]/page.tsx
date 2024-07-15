@@ -1,4 +1,5 @@
 // Base Imports
+import Comments from "@/app/components/blogs/Comments";
 import {
   BLOGS_CONFIGS,
   RELATED_ARTICLE_CONFIGS,
@@ -23,7 +24,7 @@ const BlogDetailPage = () => {
                 key={index}
                 className="text-2xl font-medium hover:text-themeRed text-themeBlack m-2 cursor-pointer"
               >
-                {blog.title}
+                {blog?.title}
               </p>
             );
           })}
@@ -121,6 +122,7 @@ const BlogDetailPage = () => {
       <div className="h-28 w-1/2 bg-themeRed text-themeGrey text-center hover:underline p-6 flex items-center gap-x-2 cursor-pointer"><ArrowLeftCircleIcon className='h-6 w-6'/><span className="truncate">Gautam Gambhir's Pick For Fielding Coach Rejected By BCCI. Report Makes Big Claim</span></div>
       <div className="h-28 w-1/2 bg-themeRed text-themeGrey text-center hover:underline p-6 flex justify-center items-center gap-x-2 cursor-pointer"><span className="truncate">I expect him to play like a...': Former India cricketer's advice for Hardik Pandya</span><ArrowRightCircleIcon className='h-6 w-6'/></div>
     </div>
+    <Comments/>
     </div>
   );
 };
