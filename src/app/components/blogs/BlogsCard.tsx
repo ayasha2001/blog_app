@@ -3,7 +3,7 @@ import React from "react";
 
 const BlogsCard = () => {
   return (
-    <div className="shadow-custom-heavy cursor-pointer h-80 w-64 p-4 bg-gradient-to-r from-themePink to-themeRed rounded-md relative transition-transform duration-500">
+    <div className="shadow-custom-heavy cursor-pointer h-80 w-64 p-4 mx-6 my-6 bg-gradient-to-r from-themePink to-themeRed rounded-md relative">
       <span>
         <p>Article</p> <p> on Jun 18, 2024</p>
       </span>

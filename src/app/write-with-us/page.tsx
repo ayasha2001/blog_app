@@ -6,6 +6,10 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
+// Component Imports
+import FlagInput from "../components/common/FlagInput";
+import SubscribeDialog from "../components/about/SubscribeDialog";
+
 const config = [
   {
     type: "text",
@@ -20,7 +24,7 @@ const config = [
     label: "Main Blog",
   },
   {
-    type: "text",
+    type: "keywords",
     placeholder: "Enter keywords",
     name: "keywords",
     label: "Keywords",
@@ -34,14 +38,14 @@ const config = [
 const initialValues = {
   title: "",
   content: "",
-  keywords: "",
+  keywords: [],
   photo: null,
 };
 
 const validationSchema = Yup.object({
   title: Yup.string().required("Enter Title"),
   content: Yup.string().required("Enter Content"),
-  keywords: Yup.string().required("Keywords will help us to feature your blog"),
+  // keywords: Yup.required("Keywords will help us to feature your blog"),
   photo: Yup.mixed().notRequired(),
 });
 
@@ -83,40 +87,48 @@ const writeWithUs = () => {
               >
                 {config?.map((field, idx) => (
                   <div key={idx} className="mb-4">
-                    {field.type === "textarea" ? (
+                    {field?.type === "textarea" ? (
                       <textarea
-                        placeholder={field.placeholder}
-                        name={field.name}
-                        value={values[field.name]}
+                        placeholder={field?.placeholder}
+                        name={field?.name}
+                        value={values[field?.name]}
                         onBlur={handleBlur}
                         onChange={handleChange}
                         rows={8}
                         className="w-full px-3 py-2 border border-gray-300 overflow-y-auto rounded-sm focus:outline-none focus:border-themeRed"
                       />
-                    ) : field.type === "file" ? (
+                    ) : field?.type === "keywords" ? (
+                      <FlagInput
+                        placeholder={field.placeholder}
+                        value={values[field.name]}
+                        onChange={(keywords: string[]) => {
+                          setFieldValue("keywords", keywords);
+                        }}
+                      />
+                    ) : field?.type === "file" ? (
                       <input
-                        type={field.type}
-                        name={field.name}
+                        type={field?.type}
+                        name={field?.name}
                         onBlur={handleBlur}
                         onChange={(event: any) => {
                           setFieldValue("photo", event.currentTarget.files[0]);
                         }}
                         className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:border-themeRed"
                       />
-                    ) : (
+                    ) :(
                       <input
-                        type={field.type}
-                        placeholder={field.placeholder}
-                        name={field.name}
-                        value={values[field.name]}
+                        type={field?.type}
+                        placeholder={field?.placeholder}
+                        name={field?.name}
+                        value={values[field?.name]}
                         onBlur={handleBlur}
                         onChange={handleChange}
                         className="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:border-themeRed"
                       />
                     )}
-                    {errors[field.name] && touched[field.name] && (
+                    {errors[field?.name] && touched[field?.name] && (
                       <p className="text-sm text-themeRed">
-                        {errors[field.name]}
+                        {errors[field?.name]}
                       </p>
                     )}
                   </div>
@@ -124,7 +136,7 @@ const writeWithUs = () => {
 
                 <button
                   type="submit"
-                  className="w-full mt-4 bg-themePink hover:bg-themeRed uppercase font-semibold text-white py-2 px-4 rounded-sm transition duration-300"
+                  className="btn-red"
                 >
                   Submit
                 </button>
@@ -133,6 +145,7 @@ const writeWithUs = () => {
           }}
         </Formik>
       </div>
+      <SubscribeDialog/>
     </div>
   );
 };

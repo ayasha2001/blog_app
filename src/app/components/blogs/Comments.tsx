@@ -73,7 +73,7 @@ const Comments = () => {
 
           return (
             <form onSubmit={handleSubmit} className="p-10">
-              {config.map((field, idx) => (
+              {config?.map((field, idx) => (
                 <div key={idx} className="mb-4">
                   {field?.type === "textarea" ? (
                     <textarea
@@ -105,7 +105,7 @@ const Comments = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="text-white text-lg py-2 px-4  mt-4 bg-themePink hover:bg-themeRed rounded-sm transition duration-300"
+                className="btn-red !w-1/3"
               >
                 Post Comment
               </button>

@@ -75,3 +75,11 @@
   text-align: center;
   transform:rotate(180deg);
 }
+
+.btn-red {
+  @apply mt-4 w-full uppercase font-bold bg-themePink hover:bg-themeRed text-white py-2 px-4 rounded-sm transition duration-300;
+}
+
+.btn-grey {
+  @apply mt-4 w-full uppercase font-semibold bg-themeGrey hover:bg-gray-300 text-gray-700 py-2 px-4 rounded-sm transition duration-300;
+}
