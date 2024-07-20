@@ -8,7 +8,7 @@ import Keywords from "./keywords/Keywords";
 import Blogs from "../blogs/LatestBlogs";
 
 // Other Imports
-import { CRICKET_INTRO_TITLE } from "@/frameworks/utils/textVariables";
+import { CRICKET_INTRO_TITLE } from "../../../frameworks/utils/textVariables";
 
 const Landing = () => {
   return (

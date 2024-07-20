@@ -1,10 +1,10 @@
 // Base Imports
-import Comments from "@/app/components/blogs/Comments";
+import Comments from "../../components/blogs/Comments";
 import {
   BLOGS_CONFIGS,
   RELATED_ARTICLE_CONFIGS,
-} from "@/app/components/blogs/configs";
-import RelatedBlogsCard from "@/app/components/blogs/RelatedBlogsCard";
+} from "../../components/blogs/configs";
+import RelatedBlogsCard from "../../components/blogs/RelatedBlogsCard";
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "@heroicons/react/16/solid";
 import React from "react";
 

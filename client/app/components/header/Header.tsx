@@ -9,7 +9,7 @@ import AccountItems from "./AccountItems";
 import NavSidebar from "./NavSidebar";
 
 // Other Imports
-import useDevice from '@/frameworks/utils/useDevice'
+import useDevice from '../../../frameworks/utils/useDevice'
 
 const Header = () => {
   const { isMobile } = useDevice();
